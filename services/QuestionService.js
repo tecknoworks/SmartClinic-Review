@@ -61,8 +61,7 @@ let getQuestionsByStatus = async (req, res, next) => {
 }
 
 let updateStatus = async (req, res, next) => {
-    let data = { ...req.data }
-    await QuestionRepository.updateStatus(req.params.id, data)
+    await QuestionRepository.updateStatus(req.params.id, { ...req.body })
         .then(
             question => {
                 res.json(question)

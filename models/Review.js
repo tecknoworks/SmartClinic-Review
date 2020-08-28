@@ -10,11 +10,11 @@ const reviewSchema = new mongoose.Schema(
             require: true
         },
         userId: {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId,
             require: true
         },
         doctorId: {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId,
             require: true
         }
     }
