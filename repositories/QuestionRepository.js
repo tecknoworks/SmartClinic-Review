@@ -34,6 +34,7 @@ class QuestionRepository extends Repository {
     async updateStatus(id, status) {
         const question = await Question.findById(id)
         Object.assign(question, status)
+        console.log(' ')
         return await question.save()
     }
 
