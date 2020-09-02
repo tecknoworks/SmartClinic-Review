@@ -7,5 +7,6 @@ router.post("/insert", ReviewService.insertReview)
 router.get("/getAverageRating/:id", ReviewService.getRatingAverage)
 router.get("/getReviews/:id", ReviewService.getAllRatings)
 router.delete("/delete/:id", ReviewService.deleteReview)
+router.get("/getNumberOfReviews/:id", ReviewService.getNumberOfRatings)
 
 module.exports = router

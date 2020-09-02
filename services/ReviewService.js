@@ -41,9 +41,18 @@ let getAllRatings = async (req, res, next) => {
         .catch(err => next(err))
 }
 
+let getNumberOfRatings = async (req, res, next) => {
+    await ReviewRepository.getNumberOfRatings(req.params.id)
+        .then(
+            ratings => {
+                res.json(ratings)
+            })
+        .catch(err => next(err))
+}
+
+
 let deleteReview = async (req, res, next) => {
     let reviewId = req.params.id
-    console.log(reviewId)
     await ReviewRepository.remove(reviewId)
         .then(
             rating => {
@@ -53,4 +62,4 @@ let deleteReview = async (req, res, next) => {
         .catch(err => next(err))
 }
 
-module.exports = { get, insertReview, getRatingAverage, getAllRatings, deleteReview }
+module.exports = { get, insertReview, getRatingAverage, getAllRatings, deleteReview, getNumberOfRatings }
